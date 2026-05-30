@@ -56,4 +56,23 @@ void main() {
     _expectTopLeft(1, const Offset(0, 24));
     _expectTopLeft(2, const Offset(48, s1 / (3 / 4) + 48));
   });
+
+  test('shouldRelayout tracks pattern changes', () {
+    final delegate = SliverStairedGridDelegate(
+      pattern: const [
+        StairedGridTile(0.5, 1),
+      ],
+    );
+
+    expect(
+      delegate.shouldRelayout(
+        SliverStairedGridDelegate(
+          pattern: const [
+            StairedGridTile(0.75, 1),
+          ],
+        ),
+      ),
+      isTrue,
+    );
+  });
 }

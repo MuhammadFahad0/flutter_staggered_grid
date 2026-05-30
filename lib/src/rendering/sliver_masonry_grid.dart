@@ -39,12 +39,12 @@ class RenderSliverMasonryGrid extends RenderSliverMultiBoxAdaptor {
     required SliverSimpleGridDelegate gridDelegate,
     required double mainAxisSpacing,
     required double crossAxisSpacing,
-  }) : assert(mainAxisSpacing >= 0),
-       assert(crossAxisSpacing >= 0),
-       _gridDelegate = gridDelegate,
-       _mainAxisSpacing = mainAxisSpacing,
-       _crossAxisSpacing = crossAxisSpacing,
-       super(childManager: childManager);
+  })  : assert(mainAxisSpacing >= 0),
+        assert(crossAxisSpacing >= 0),
+        _gridDelegate = gridDelegate,
+        _mainAxisSpacing = mainAxisSpacing,
+        _crossAxisSpacing = crossAxisSpacing,
+        super(childManager: childManager);
 
   /// {@template fsgv.global.gridDelegate}
   /// The delegate that controls the size and position of the children.
@@ -194,7 +194,7 @@ class RenderSliverMasonryGrid extends RenderSliverMultiBoxAdaptor {
 
     // The stride is the cross extent of a cell + crossAxisSpacing.
     _stride = (constraints.crossAxisExtent + crossAxisSpacing) / crossAxisCount;
-    final childCrossAxisExtent = _stride - crossAxisSpacing;
+    final childCrossAxisExtent = math.max(0.0, _stride - crossAxisSpacing);
     final childConstraints = constraints.asBoxConstraints(
       crossAxisExtent: childCrossAxisExtent,
     );
@@ -637,8 +637,7 @@ class RenderSliverMasonryGrid extends RenderSliverMultiBoxAdaptor {
       cacheExtent: cacheExtent,
       maxPaintExtent: estimatedMaxScrollOffset,
       // Conservative to avoid flickering away the clip during scroll.
-      hasVisualOverflow:
-          endScrollOffset > targetEndScrollOffsetForPaint ||
+      hasVisualOverflow: endScrollOffset > targetEndScrollOffsetForPaint ||
           constraints.scrollOffset > 0.0,
     );
 

@@ -177,4 +177,27 @@ void main() {
     expect(find.text('6'), findsNothing);
     expect(find.text('7'), findsNothing);
   });
+
+  testWidgets('AlignedGridView handles tiny width with large spacing', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(
+      Directionality(
+        textDirection: TextDirection.ltr,
+        child: SizedBox(
+          width: 10,
+          height: 200,
+          child: AlignedGridView.count(
+            crossAxisCount: 4,
+            crossAxisSpacing: 24,
+            itemCount: 4,
+            itemBuilder: (context, index) => Tile(index: index, height: 50),
+          ),
+        ),
+      ),
+    );
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('0'), findsOneWidget);
+  });
 }

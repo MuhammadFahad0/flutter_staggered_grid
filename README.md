@@ -169,14 +169,14 @@ AlignedGridView.count(
 
 ## Example app
 
-The repository includes a complete demo app in `examples/` showing all supported layouts.
+The repository includes a complete demo app in `example/` showing all supported layouts.
 
 <!-- Links -->
 [pub_badge]: https://img.shields.io/pub/v/flutter_staggered_grid.svg
 [pub]: https://pub.dev/packages/flutter_staggered_grid
-[staggered_preview]: docs/images/staggered.png
-[masonry_preview]: docs/images/masonry.png
-[quilted_preview]: docs/images/quilted.png
-[woven_preview]: docs/images/woven.png
-[staired_preview]: docs/images/staired.png
-[aligned_preview]: docs/images/aligned.png
+[staggered_preview]: doc/images/staggered.png
+[masonry_preview]: doc/images/masonry.png
+[quilted_preview]: doc/images/quilted.png
+[woven_preview]: doc/images/woven.png
+[staired_preview]: doc/images/staired.png
+[aligned_preview]: doc/images/aligned.png

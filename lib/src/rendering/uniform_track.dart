@@ -3,6 +3,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/rendering.dart';
+import 'package:flutter_staggered_grid/src/foundation/constants.dart';
 
 class UniformTrackParentData extends ContainerBoxParentData<RenderBox> {}
 
@@ -85,8 +86,11 @@ class RenderUniformTrack extends RenderBox
   Size _computeSize(BoxConstraints constraints, ChildLayouter layoutChild) {
     final mainAxisExtent =
         _isHorizontal ? constraints.maxWidth : constraints.maxHeight;
-    final childMainAxisExtent =
-        ((mainAxisExtent + spacing) / division) - spacing;
+    final childMainAxisExtent = computeSafeChildExtent(
+      totalExtent: mainAxisExtent,
+      spacing: spacing,
+      division: division,
+    );
     final childConstraints = _isHorizontal
         ? BoxConstraints.tightFor(width: childMainAxisExtent)
         : BoxConstraints.tightFor(height: childMainAxisExtent);
@@ -120,8 +124,11 @@ class RenderUniformTrack extends RenderBox
     size = _computeSize(constraints, ChildLayoutHelper.layoutChild);
     final mainAxisExtent =
         _isHorizontal ? constraints.maxWidth : constraints.maxHeight;
-    final childMainAxisExtent =
-        ((mainAxisExtent + spacing) / division) - spacing;
+    final childMainAxisExtent = computeSafeChildExtent(
+      totalExtent: mainAxisExtent,
+      spacing: spacing,
+      division: division,
+    );
     final maxChildCrossAxisExtent = _isHorizontal ? size.height : size.width;
 
     double getChildCrossAxisExtent(RenderBox child) {

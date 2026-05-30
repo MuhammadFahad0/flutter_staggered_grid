@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_staggered_grid/src/widgets/staggered_grid.dart';
-import 'package:flutter_staggered_grid/src/widgets/staggered_grid_tile.dart';
+import 'package:flutter_staggered_grid/flutter_staggered_grid.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../common.dart';
@@ -133,5 +132,35 @@ void main() {
     _expectTopLeft(2, const Offset(s2 + 4, 104));
     _expectTopLeft(3, const Offset(s3 + 4, 104));
     _expectTopLeft(4, const Offset(0, 208));
+  });
+
+  testWidgets('StaggeredGridTile.fit supports reversed axis direction', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(
+      Directionality(
+        textDirection: TextDirection.ltr,
+        child: StaggeredGrid.count(
+          axisDirection: AxisDirection.up,
+          crossAxisCount: 2,
+          mainAxisSpacing: 4,
+          crossAxisSpacing: 4,
+          children: const [
+            StaggeredGridTile.fit(
+              crossAxisCellCount: 1,
+              child: SizedBox(height: 100, child: Tile(index: 0)),
+            ),
+            StaggeredGridTile.fit(
+              crossAxisCellCount: 1,
+              child: SizedBox(height: 200, child: Tile(index: 1)),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    expect(tester.takeException(), isNull);
+    expect(tester.getTopLeft(find.text('0')).dy, 100);
+    expect(tester.getTopLeft(find.text('1')).dy, 0);
   });
 }

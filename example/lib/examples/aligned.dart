@@ -1,21 +1,20 @@
-import 'package:examples/common.dart';
+import '../common.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_staggered_grid/flutter_staggered_grid.dart';
 
-class MasonryPage extends StatelessWidget {
-  const MasonryPage({Key? key}) : super(key: key);
+class AlignedPage extends StatelessWidget {
+  const AlignedPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      title: 'Masonry',
-      child: MasonryGridView.count(
+      title: 'Aligned',
+      child: AlignedGridView.count(
         crossAxisCount: 4,
         mainAxisSpacing: 4,
         crossAxisSpacing: 4,
         itemBuilder: (context, index) {
-          return Tile(index: index, extent: (index % 5 + 1) * 100);
+          return Tile(index: index, extent: (index % 7 + 1) * 30);
         },
       ),
     );

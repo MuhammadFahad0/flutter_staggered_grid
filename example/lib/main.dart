@@ -1,10 +1,10 @@
-import 'package:examples/common.dart';
-import 'package:examples/examples/aligned.dart';
-import 'package:examples/examples/masonry.dart';
-import 'package:examples/examples/quilted.dart';
-import 'package:examples/examples/staggered.dart';
-import 'package:examples/examples/staired.dart';
-import 'package:examples/examples/woven.dart';
+import 'common.dart';
+import 'pages/aligned.dart';
+import 'pages/masonry.dart';
+import 'pages/quilted.dart';
+import 'pages/staggered.dart';
+import 'pages/staired.dart';
+import 'pages/woven.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -107,7 +107,7 @@ class MenuEntry extends StatelessWidget {
           children: [
             Image.asset(
               'assets/$imageName.png',
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
             Positioned.fill(
               child: FractionallySizedBox(

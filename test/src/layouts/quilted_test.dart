@@ -274,4 +274,46 @@ void main() {
     expect(layout.computeMaxScrollOffset(12), 620);
     expect(layout.computeMaxScrollOffset(16), 828);
   });
+
+  test('shouldRelayout tracks pattern and repeat changes', () {
+    final delegate = SliverQuiltedGridDelegate(
+      crossAxisCount: 4,
+      pattern: const [
+        QuiltedGridTile(2, 2),
+        QuiltedGridTile(1, 1),
+        QuiltedGridTile(1, 1),
+        QuiltedGridTile(1, 2),
+      ],
+    );
+
+    expect(
+      delegate.shouldRelayout(
+        SliverQuiltedGridDelegate(
+          crossAxisCount: 4,
+          pattern: const [
+            QuiltedGridTile(2, 2),
+            QuiltedGridTile(1, 2),
+            QuiltedGridTile(1, 1),
+            QuiltedGridTile(1, 1),
+          ],
+        ),
+      ),
+      isTrue,
+    );
+    expect(
+      delegate.shouldRelayout(
+        SliverQuiltedGridDelegate(
+          crossAxisCount: 4,
+          repeatPattern: QuiltedGridRepeatPattern.inverted,
+          pattern: const [
+            QuiltedGridTile(2, 2),
+            QuiltedGridTile(1, 1),
+            QuiltedGridTile(1, 1),
+            QuiltedGridTile(1, 2),
+          ],
+        ),
+      ),
+      isTrue,
+    );
+  });
 }

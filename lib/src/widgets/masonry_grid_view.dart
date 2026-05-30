@@ -103,28 +103,28 @@ class MasonryGridView extends BoxScrollView {
     ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
         ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
-  }) : childrenDelegate = SliverChildListDelegate(
-         children,
-         addAutomaticKeepAlives: addAutomaticKeepAlives,
-         addRepaintBoundaries: addRepaintBoundaries,
-         addSemanticIndexes: addSemanticIndexes,
-       ),
-       super(
-         key: key,
-         scrollDirection: scrollDirection,
-         reverse: reverse,
-         controller: controller,
-         primary: primary,
-         physics: physics,
-         shrinkWrap: shrinkWrap,
-         padding: padding,
-         cacheExtent: cacheExtent,
-         semanticChildCount: semanticChildCount ?? children.length,
-         dragStartBehavior: dragStartBehavior,
-         keyboardDismissBehavior: keyboardDismissBehavior,
-         restorationId: restorationId,
-         clipBehavior: clipBehavior,
-       );
+  })  : childrenDelegate = SliverChildListDelegate(
+          children,
+          addAutomaticKeepAlives: addAutomaticKeepAlives,
+          addRepaintBoundaries: addRepaintBoundaries,
+          addSemanticIndexes: addSemanticIndexes,
+        ),
+        super(
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount ?? children.length,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+        );
 
   /// Creates a scrollable, 2D array of widgets that are created on demand and
   /// placed according to a masonry layout.
@@ -165,29 +165,29 @@ class MasonryGridView extends BoxScrollView {
         ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
-  }) : childrenDelegate = SliverChildBuilderDelegate(
-         itemBuilder,
-         childCount: itemCount,
-         addAutomaticKeepAlives: addAutomaticKeepAlives,
-         addRepaintBoundaries: addRepaintBoundaries,
-         addSemanticIndexes: addSemanticIndexes,
-       ),
-       super(
-         key: key,
-         scrollDirection: scrollDirection,
-         reverse: reverse,
-         controller: controller,
-         primary: primary,
-         physics: physics,
-         shrinkWrap: shrinkWrap,
-         padding: padding,
-         cacheExtent: cacheExtent,
-         semanticChildCount: semanticChildCount ?? itemCount,
-         dragStartBehavior: dragStartBehavior,
-         keyboardDismissBehavior: keyboardDismissBehavior,
-         restorationId: restorationId,
-         clipBehavior: clipBehavior,
-       );
+  })  : childrenDelegate = SliverChildBuilderDelegate(
+          itemBuilder,
+          childCount: itemCount,
+          addAutomaticKeepAlives: addAutomaticKeepAlives,
+          addRepaintBoundaries: addRepaintBoundaries,
+          addSemanticIndexes: addSemanticIndexes,
+        ),
+        super(
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount ?? itemCount,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+        );
 
   /// Creates a scrollable, 2D array of widgets with both a custom
   /// [SliverSimpleGridDelegate] and a custom [SliverChildDelegate].
@@ -216,21 +216,21 @@ class MasonryGridView extends BoxScrollView {
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
   }) : super(
-         key: key,
-         scrollDirection: scrollDirection,
-         reverse: reverse,
-         controller: controller,
-         primary: primary,
-         physics: physics,
-         shrinkWrap: shrinkWrap,
-         padding: padding,
-         cacheExtent: cacheExtent,
-         semanticChildCount: semanticChildCount,
-         dragStartBehavior: dragStartBehavior,
-         keyboardDismissBehavior: keyboardDismissBehavior,
-         restorationId: restorationId,
-         clipBehavior: clipBehavior,
-       );
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+        );
 
   /// Creates a scrollable, 2D array of widgets with a fixed number of tiles in
   /// the cross axis.
@@ -271,32 +271,32 @@ class MasonryGridView extends BoxScrollView {
         ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
-  }) : gridDelegate = SliverSimpleGridDelegateWithFixedCrossAxisCount(
-         crossAxisCount: crossAxisCount,
-       ),
-       childrenDelegate = SliverChildBuilderDelegate(
-         itemBuilder,
-         childCount: itemCount,
-         addAutomaticKeepAlives: addAutomaticKeepAlives,
-         addRepaintBoundaries: addRepaintBoundaries,
-         addSemanticIndexes: addSemanticIndexes,
-       ),
-       super(
-         key: key,
-         scrollDirection: scrollDirection,
-         reverse: reverse,
-         controller: controller,
-         primary: primary,
-         physics: physics,
-         shrinkWrap: shrinkWrap,
-         padding: padding,
-         cacheExtent: cacheExtent,
-         semanticChildCount: semanticChildCount ?? itemCount,
-         dragStartBehavior: dragStartBehavior,
-         keyboardDismissBehavior: keyboardDismissBehavior,
-         restorationId: restorationId,
-         clipBehavior: clipBehavior,
-       );
+  })  : gridDelegate = SliverSimpleGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: crossAxisCount,
+        ),
+        childrenDelegate = SliverChildBuilderDelegate(
+          itemBuilder,
+          childCount: itemCount,
+          addAutomaticKeepAlives: addAutomaticKeepAlives,
+          addRepaintBoundaries: addRepaintBoundaries,
+          addSemanticIndexes: addSemanticIndexes,
+        ),
+        super(
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount ?? itemCount,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+        );
 
   /// Creates a scrollable, 2D array of widgets with tiles that each have a
   /// maximum cross-axis extent.
@@ -337,32 +337,32 @@ class MasonryGridView extends BoxScrollView {
         ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
-  }) : gridDelegate = SliverSimpleGridDelegateWithMaxCrossAxisExtent(
-         maxCrossAxisExtent: maxCrossAxisExtent,
-       ),
-       childrenDelegate = SliverChildBuilderDelegate(
-         itemBuilder,
-         childCount: itemCount,
-         addAutomaticKeepAlives: addAutomaticKeepAlives,
-         addRepaintBoundaries: addRepaintBoundaries,
-         addSemanticIndexes: addSemanticIndexes,
-       ),
-       super(
-         key: key,
-         scrollDirection: scrollDirection,
-         reverse: reverse,
-         controller: controller,
-         primary: primary,
-         physics: physics,
-         shrinkWrap: shrinkWrap,
-         padding: padding,
-         cacheExtent: cacheExtent,
-         semanticChildCount: semanticChildCount ?? itemCount,
-         dragStartBehavior: dragStartBehavior,
-         keyboardDismissBehavior: keyboardDismissBehavior,
-         restorationId: restorationId,
-         clipBehavior: clipBehavior,
-       );
+  })  : gridDelegate = SliverSimpleGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: maxCrossAxisExtent,
+        ),
+        childrenDelegate = SliverChildBuilderDelegate(
+          itemBuilder,
+          childCount: itemCount,
+          addAutomaticKeepAlives: addAutomaticKeepAlives,
+          addRepaintBoundaries: addRepaintBoundaries,
+          addSemanticIndexes: addSemanticIndexes,
+        ),
+        super(
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount ?? itemCount,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+        );
 
   /// A delegate that controls the layout of the children within the
   /// [MasonryGridView].

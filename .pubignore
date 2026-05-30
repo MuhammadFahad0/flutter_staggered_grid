@@ -1,4 +1,8 @@
-docs/
-examples/
 build/
 *.iml
+example/.dart_tool/
+example/build/
+example/ios/Flutter/Generated.xcconfig
+example/ios/Flutter/ephemeral/
+example/ios/Flutter/flutter_export_environment.sh
+example/macos/Flutter/ephemeral/

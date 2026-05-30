@@ -80,21 +80,21 @@ class AlignedGridView extends BoxScrollView {
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
   }) : super(
-         key: key,
-         scrollDirection: scrollDirection,
-         reverse: reverse,
-         controller: controller,
-         primary: primary,
-         physics: physics,
-         shrinkWrap: shrinkWrap,
-         padding: padding,
-         cacheExtent: cacheExtent,
-         semanticChildCount: semanticChildCount,
-         dragStartBehavior: dragStartBehavior,
-         keyboardDismissBehavior: keyboardDismissBehavior,
-         restorationId: restorationId,
-         clipBehavior: clipBehavior,
-       );
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+        );
 
   /// Creates a scrollable, 2D array of widgets with a fixed number of tiles in
   /// the cross axis.
@@ -134,25 +134,25 @@ class AlignedGridView extends BoxScrollView {
         ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
-  }) : gridDelegate = SliverSimpleGridDelegateWithFixedCrossAxisCount(
-         crossAxisCount: crossAxisCount,
-       ),
-       super(
-         key: key,
-         scrollDirection: scrollDirection,
-         reverse: reverse,
-         controller: controller,
-         primary: primary,
-         physics: physics,
-         shrinkWrap: shrinkWrap,
-         padding: padding,
-         cacheExtent: cacheExtent,
-         semanticChildCount: semanticChildCount ?? itemCount,
-         dragStartBehavior: dragStartBehavior,
-         keyboardDismissBehavior: keyboardDismissBehavior,
-         restorationId: restorationId,
-         clipBehavior: clipBehavior,
-       );
+  })  : gridDelegate = SliverSimpleGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: crossAxisCount,
+        ),
+        super(
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount ?? itemCount,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+        );
 
   /// Creates a scrollable, 2D array of widgets with tiles that each have a
   /// maximum cross-axis extent.
@@ -192,25 +192,25 @@ class AlignedGridView extends BoxScrollView {
         ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
-  }) : gridDelegate = SliverSimpleGridDelegateWithMaxCrossAxisExtent(
-         maxCrossAxisExtent: maxCrossAxisExtent,
-       ),
-       super(
-         key: key,
-         scrollDirection: scrollDirection,
-         reverse: reverse,
-         controller: controller,
-         primary: primary,
-         physics: physics,
-         shrinkWrap: shrinkWrap,
-         padding: padding,
-         cacheExtent: cacheExtent,
-         semanticChildCount: semanticChildCount ?? itemCount,
-         dragStartBehavior: dragStartBehavior,
-         keyboardDismissBehavior: keyboardDismissBehavior,
-         restorationId: restorationId,
-         clipBehavior: clipBehavior,
-       );
+  })  : gridDelegate = SliverSimpleGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: maxCrossAxisExtent,
+        ),
+        super(
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount ?? itemCount,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+        );
 
   /// A delegate that controls the layout of the children within the
   /// [AlignedGridView].

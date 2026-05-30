@@ -166,4 +166,36 @@ void main() {
     expect(layout.computeMaxScrollOffset(14), 863.5999999999999);
     expect(layout.computeMaxScrollOffset(16), 1037.92);
   });
+
+  test('extent delegate relayout tracks max extent and pattern changes', () {
+    final delegate = SliverWovenGridDelegate.extent(
+      maxCrossAxisExtent: 200,
+      pattern: const [
+        WovenGridTile(1),
+      ],
+    );
+
+    expect(
+      delegate.shouldRelayout(
+        SliverWovenGridDelegate.extent(
+          maxCrossAxisExtent: 240,
+          pattern: const [
+            WovenGridTile(1),
+          ],
+        ),
+      ),
+      isTrue,
+    );
+    expect(
+      delegate.shouldRelayout(
+        SliverWovenGridDelegate.extent(
+          maxCrossAxisExtent: 200,
+          pattern: const [
+            WovenGridTile(5 / 7),
+          ],
+        ),
+      ),
+      isTrue,
+    );
+  });
 }

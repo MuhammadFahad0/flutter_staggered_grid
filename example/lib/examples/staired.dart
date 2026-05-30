@@ -1,4 +1,4 @@
-import 'package:examples/common.dart';
+import '../common.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_staggered_grid/flutter_staggered_grid.dart';
 

@@ -1,18 +1,18 @@
 import 'dart:math';
 
-import 'package:examples/common.dart';
+import '../common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_staggered_grid/flutter_staggered_grid.dart';
 
-class MasonryPage extends StatefulWidget {
-  const MasonryPage({Key? key}) : super(key: key);
+class AlignedPage extends StatefulWidget {
+  const AlignedPage({Key? key}) : super(key: key);
 
   @override
-  State<MasonryPage> createState() => _MasonryPageState();
+  State<AlignedPage> createState() => _AlignedPageState();
 }
 
-class _MasonryPageState extends State<MasonryPage> {
+class _AlignedPageState extends State<AlignedPage> {
   final rnd = Random();
   late List<int> extents;
   int crossAxisCount = 4;
@@ -20,19 +20,19 @@ class _MasonryPageState extends State<MasonryPage> {
   @override
   void initState() {
     super.initState();
-    extents = List<int>.generate(10000, (int index) => rnd.nextInt(5) + 1);
+    extents = List<int>.generate(10000, (int index) => rnd.nextInt(7) + 1);
   }
 
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      title: 'Masonry',
-      child: MasonryGridView.count(
+      title: 'Aligned',
+      child: AlignedGridView.count(
         crossAxisCount: crossAxisCount,
         mainAxisSpacing: 4,
         crossAxisSpacing: 4,
         itemBuilder: (context, index) {
-          final height = extents[index] * 100;
+          final height = extents[index] * 40;
           return ImageTile(index: index, width: 100, height: height);
         },
         itemCount: extents.length,
