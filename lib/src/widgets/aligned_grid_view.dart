@@ -53,18 +53,20 @@ import 'package:flutter_staggered_grid/src/widgets/sliver_aligned_grid.dart';
 /// grids's scrollable to avoid partial obstructions indicated by
 /// [MediaQuery]'s padding. To avoid this behavior, override with a
 /// zero [padding] property.
-class AlignedGridView extends BoxScrollView {
+class AlignedGridView extends ScrollView {
   /// Creates a scrollable, 2D array of widgets with both a custom
   /// [SliverSimpleGridDelegate].
   const AlignedGridView.custom({
-    Key? key,
-    Axis scrollDirection = Axis.vertical,
-    bool reverse = false,
-    ScrollController? controller,
-    bool? primary,
-    ScrollPhysics? physics,
-    bool shrinkWrap = false,
-    EdgeInsetsGeometry? padding,
+    super.key,
+    super.scrollDirection,
+    super.reverse,
+    super.controller,
+    super.primary,
+    super.physics,
+    super.shrinkWrap,
+    this.padding,
+    this.header,
+    this.footer,
     required this.gridDelegate,
     required this.itemBuilder,
     this.itemCount,
@@ -72,29 +74,13 @@ class AlignedGridView extends BoxScrollView {
     this.addRepaintBoundaries = true,
     this.mainAxisSpacing = 0.0,
     this.crossAxisSpacing = 0.0,
-    double? cacheExtent,
-    int? semanticChildCount,
-    DragStartBehavior dragStartBehavior = DragStartBehavior.start,
-    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
-        ScrollViewKeyboardDismissBehavior.manual,
-    String? restorationId,
-    Clip clipBehavior = Clip.hardEdge,
-  }) : super(
-          key: key,
-          scrollDirection: scrollDirection,
-          reverse: reverse,
-          controller: controller,
-          primary: primary,
-          physics: physics,
-          shrinkWrap: shrinkWrap,
-          padding: padding,
-          cacheExtent: cacheExtent,
-          semanticChildCount: semanticChildCount,
-          dragStartBehavior: dragStartBehavior,
-          keyboardDismissBehavior: keyboardDismissBehavior,
-          restorationId: restorationId,
-          clipBehavior: clipBehavior,
-        );
+    super.cacheExtent,
+    super.semanticChildCount,
+    super.dragStartBehavior,
+    super.keyboardDismissBehavior,
+    super.restorationId,
+    super.clipBehavior,
+  });
 
   /// Creates a scrollable, 2D array of widgets with a fixed number of tiles in
   /// the cross axis.
@@ -112,14 +98,16 @@ class AlignedGridView extends BoxScrollView {
   ///  * [SliverAlignedGrid.count], the equivalent constructor for
   ///    [SliverAlignedGrid].
   AlignedGridView.count({
-    Key? key,
-    Axis scrollDirection = Axis.vertical,
-    bool reverse = false,
-    ScrollController? controller,
-    bool? primary,
-    ScrollPhysics? physics,
-    bool shrinkWrap = false,
-    EdgeInsetsGeometry? padding,
+    super.key,
+    super.scrollDirection,
+    super.reverse,
+    super.controller,
+    super.primary,
+    super.physics,
+    super.shrinkWrap,
+    this.padding,
+    this.header,
+    this.footer,
     required int crossAxisCount,
     this.mainAxisSpacing = 0.0,
     this.crossAxisSpacing = 0.0,
@@ -127,31 +115,17 @@ class AlignedGridView extends BoxScrollView {
     this.itemCount,
     this.addAutomaticKeepAlives = true,
     this.addRepaintBoundaries = true,
-    double? cacheExtent,
+    super.cacheExtent,
     int? semanticChildCount,
-    DragStartBehavior dragStartBehavior = DragStartBehavior.start,
-    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
-        ScrollViewKeyboardDismissBehavior.manual,
-    String? restorationId,
-    Clip clipBehavior = Clip.hardEdge,
+    super.dragStartBehavior,
+    super.keyboardDismissBehavior,
+    super.restorationId,
+    super.clipBehavior,
   })  : gridDelegate = SliverSimpleGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: crossAxisCount,
         ),
         super(
-          key: key,
-          scrollDirection: scrollDirection,
-          reverse: reverse,
-          controller: controller,
-          primary: primary,
-          physics: physics,
-          shrinkWrap: shrinkWrap,
-          padding: padding,
-          cacheExtent: cacheExtent,
           semanticChildCount: semanticChildCount ?? itemCount,
-          dragStartBehavior: dragStartBehavior,
-          keyboardDismissBehavior: keyboardDismissBehavior,
-          restorationId: restorationId,
-          clipBehavior: clipBehavior,
         );
 
   /// Creates a scrollable, 2D array of widgets with tiles that each have a
@@ -170,14 +144,16 @@ class AlignedGridView extends BoxScrollView {
   ///  * [SliverAlignedGrid.extent], the equivalent constructor for
   ///    [SliverAlignedGrid].
   AlignedGridView.extent({
-    Key? key,
-    Axis scrollDirection = Axis.vertical,
-    bool reverse = false,
-    ScrollController? controller,
-    bool? primary,
-    ScrollPhysics? physics,
-    bool shrinkWrap = false,
-    EdgeInsetsGeometry? padding,
+    super.key,
+    super.scrollDirection,
+    super.reverse,
+    super.controller,
+    super.primary,
+    super.physics,
+    super.shrinkWrap,
+    this.padding,
+    this.header,
+    this.footer,
     required double maxCrossAxisExtent,
     this.mainAxisSpacing = 0.0,
     this.crossAxisSpacing = 0.0,
@@ -185,31 +161,17 @@ class AlignedGridView extends BoxScrollView {
     this.itemCount,
     this.addAutomaticKeepAlives = true,
     this.addRepaintBoundaries = true,
-    double? cacheExtent,
+    super.cacheExtent,
     int? semanticChildCount,
-    DragStartBehavior dragStartBehavior = DragStartBehavior.start,
-    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
-        ScrollViewKeyboardDismissBehavior.manual,
-    String? restorationId,
-    Clip clipBehavior = Clip.hardEdge,
+    super.dragStartBehavior,
+    super.keyboardDismissBehavior,
+    super.restorationId,
+    super.clipBehavior,
   })  : gridDelegate = SliverSimpleGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: maxCrossAxisExtent,
         ),
         super(
-          key: key,
-          scrollDirection: scrollDirection,
-          reverse: reverse,
-          controller: controller,
-          primary: primary,
-          physics: physics,
-          shrinkWrap: shrinkWrap,
-          padding: padding,
-          cacheExtent: cacheExtent,
           semanticChildCount: semanticChildCount ?? itemCount,
-          dragStartBehavior: dragStartBehavior,
-          keyboardDismissBehavior: keyboardDismissBehavior,
-          restorationId: restorationId,
-          clipBehavior: clipBehavior,
         );
 
   /// A delegate that controls the layout of the children within the
@@ -268,7 +230,15 @@ class AlignedGridView extends BoxScrollView {
   /// Defaults to true.
   final bool addRepaintBoundaries;
 
-  @override
+  /// The amount of space by which to inset the children.
+  final EdgeInsetsGeometry? padding;
+
+  /// A widget to place above the grid.
+  final Widget? header;
+
+  /// A widget to place below the grid.
+  final Widget? footer;
+
   Widget buildChildLayout(BuildContext context) {
     return SliverAlignedGrid(
       itemBuilder: itemBuilder,
@@ -279,5 +249,21 @@ class AlignedGridView extends BoxScrollView {
       addAutomaticKeepAlives: addAutomaticKeepAlives,
       addRepaintBoundaries: addRepaintBoundaries,
     );
+  }
+
+  @override
+  List<Widget> buildSlivers(BuildContext context) {
+    Widget sliver = buildChildLayout(context);
+    if (padding != null) {
+      sliver = SliverPadding(
+        padding: padding!,
+        sliver: sliver,
+      );
+    }
+    return <Widget>[
+      if (header != null) SliverToBoxAdapter(child: header!),
+      sliver,
+      if (footer != null) SliverToBoxAdapter(child: footer!),
+    ];
   }
 }
