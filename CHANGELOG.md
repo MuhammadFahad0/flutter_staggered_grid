@@ -1,3 +1,10 @@
+## 0.1.0
+### Added
+* Built-in Header/Footer support for `MasonryGridView` and `AlignedGridView`.
+* Sticky Section Headers layout component (`SliverStickyHeader`).
+* Implicitly Animated Grids (`AnimatedMasonryGridView` and `AnimatedAlignedGridView`).
+* Drag-and-Drop Reordering (`ReorderableMasonryGridView` and `ReorderableAlignedGridView`).
+
 ## 0.0.4
 ### Changed
 * Exported `StaggeredGridDelegate` types from the public library entrypoint.

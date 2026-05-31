@@ -1,6 +1,6 @@
 name: flutter_staggered_grid
 description: Provides staggered, masonry, quilted, woven, and staired grid layouts for Flutter.
-version: 0.0.4
+version: 0.1.0
 homepage: https://github.com/MuhammadFahad0/flutter_staggered_grid
 repository: https://github.com/MuhammadFahad0/flutter_staggered_grid
 issue_tracker: https://github.com/MuhammadFahad0/flutter_staggered_grid/issues
