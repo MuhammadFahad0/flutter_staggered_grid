@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid/src/rendering/sliver_simple_grid_delegate.dart';
 import 'package:flutter_staggered_grid/src/widgets/sliver_aligned_grid.dart';
@@ -239,7 +238,7 @@ class AlignedGridView extends ScrollView {
   /// A widget to place below the grid.
   final Widget? footer;
 
-  Widget buildChildLayout(BuildContext context) {
+  Widget _buildChildLayout(BuildContext context) {
     return SliverAlignedGrid(
       itemBuilder: itemBuilder,
       itemCount: itemCount,
@@ -253,7 +252,7 @@ class AlignedGridView extends ScrollView {
 
   @override
   List<Widget> buildSlivers(BuildContext context) {
-    Widget sliver = buildChildLayout(context);
+    Widget sliver = _buildChildLayout(context);
     if (padding != null) {
       sliver = SliverPadding(
         padding: padding!,

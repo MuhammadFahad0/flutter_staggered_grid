@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid/src/rendering/sliver_simple_grid_delegate.dart';
@@ -80,7 +81,7 @@ class ReorderableMasonryGridView extends StatefulWidget {
     this.padding,
     this.header,
     this.footer,
-    required int crossAxisCount,
+    required this.crossAxisCount,
     this.mainAxisSpacing = 0.0,
     this.crossAxisSpacing = 0.0,
     required this.itemBuilder,
@@ -93,8 +94,7 @@ class ReorderableMasonryGridView extends StatefulWidget {
     this.restorationId,
     this.cacheExtent,
   }) : gridDelegate = null,
-       maxCrossAxisExtent = null,
-       crossAxisCount = crossAxisCount;
+       maxCrossAxisExtent = null;
 
   /// Creates a reorderable masonry grid with tiles that have a maximum cross-axis extent.
   const ReorderableMasonryGridView.extent({
@@ -108,7 +108,7 @@ class ReorderableMasonryGridView extends StatefulWidget {
     this.padding,
     this.header,
     this.footer,
-    required double maxCrossAxisExtent,
+    required this.maxCrossAxisExtent,
     this.mainAxisSpacing = 0.0,
     this.crossAxisSpacing = 0.0,
     required this.itemBuilder,
@@ -121,8 +121,7 @@ class ReorderableMasonryGridView extends StatefulWidget {
     this.restorationId,
     this.cacheExtent,
   }) : gridDelegate = null,
-       crossAxisCount = null,
-       maxCrossAxisExtent = maxCrossAxisExtent;
+       crossAxisCount = null;
 
   /// The scroll direction of the grid.
   final Axis scrollDirection;
@@ -276,7 +275,7 @@ class ReorderableAlignedGridView extends StatefulWidget {
     this.padding,
     this.header,
     this.footer,
-    required int crossAxisCount,
+    required this.crossAxisCount,
     this.mainAxisSpacing = 0.0,
     this.crossAxisSpacing = 0.0,
     required this.itemBuilder,
@@ -289,8 +288,7 @@ class ReorderableAlignedGridView extends StatefulWidget {
     this.restorationId,
     this.cacheExtent,
   }) : gridDelegate = null,
-       maxCrossAxisExtent = null,
-       crossAxisCount = crossAxisCount;
+       maxCrossAxisExtent = null;
 
   /// Creates a reorderable aligned grid with tiles that have a maximum cross-axis extent.
   const ReorderableAlignedGridView.extent({
@@ -304,7 +302,7 @@ class ReorderableAlignedGridView extends StatefulWidget {
     this.padding,
     this.header,
     this.footer,
-    required double maxCrossAxisExtent,
+    required this.maxCrossAxisExtent,
     this.mainAxisSpacing = 0.0,
     this.crossAxisSpacing = 0.0,
     required this.itemBuilder,
@@ -317,8 +315,7 @@ class ReorderableAlignedGridView extends StatefulWidget {
     this.restorationId,
     this.cacheExtent,
   }) : gridDelegate = null,
-       crossAxisCount = null,
-       maxCrossAxisExtent = maxCrossAxisExtent;
+       crossAxisCount = null;
 
   /// The scroll direction of the grid.
   final Axis scrollDirection;

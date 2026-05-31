@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs
 import 'package:flutter/widgets.dart';
 
 int _binarySearch<T extends Comparable<T>>(List<T> sortedList, T value) {

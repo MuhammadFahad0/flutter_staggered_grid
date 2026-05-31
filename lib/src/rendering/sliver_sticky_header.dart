@@ -1,6 +1,6 @@
+// ignore_for_file: public_member_api_docs
 import 'dart:math' as math;
 import 'package:flutter/rendering.dart';
-import 'package:vector_math/vector_math_64.dart' show Matrix4;
 
 class RenderSliverStickyHeader extends RenderSliver with RenderSliverHelpers {
   RenderSliverStickyHeader({
