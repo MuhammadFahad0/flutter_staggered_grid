@@ -1,3 +1,7 @@
+## 0.1.1
+### Changed
+* Updated the example application `compileSdkVersion` and `targetSdkVersion` to `36`.
+
 ## 0.1.0
 ### Added
 * Built-in Header/Footer support for `MasonryGridView` and `AlignedGridView`.
