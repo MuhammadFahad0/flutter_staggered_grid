@@ -8,7 +8,7 @@ Add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_staggered_grid: ^0.1.1
+  flutter_staggered_grid: ^0.1.2
 ```
 
 ```dart

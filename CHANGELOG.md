@@ -1,3 +1,7 @@
+## 0.1.2
+### Changed
+* Updated installer documentation to standard pub format.
+
 ## 0.1.1
 ### Changed
 * Updated the example application `compileSdkVersion` and `targetSdkVersion` to `36`.
