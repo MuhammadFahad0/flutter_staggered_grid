@@ -2,18 +2,13 @@
 
 Flutter grid layouts for staggered, masonry, quilted, woven, staired, and aligned patterns.
 
-> **Note:** This is a custom version of `flutter_staggered_grid`. It is not published on pub.dev. To use this specific version, please install it directly from this GitHub repository.
-
 ## Install
 
 Add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_staggered_grid:
-    git:
-      url: https://github.com/MuhammadFahad0/flutter_staggered_grid.git
-      ref: main
+  flutter_staggered_grid: ^0.1.1
 ```
 
 ```dart
